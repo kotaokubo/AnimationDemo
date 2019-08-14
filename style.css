@@ -1,0 +1,44 @@
+/* 問題１ ------------------------------------------------*/
+/* box1にカーソルを重ねた時に、以下の内容のアニメーションを実行されるようにしてください */
+/* ・box1を右に500px移動させる */
+/* ・アニメーション完了総時間は1秒 */
+/* ・タイミングファンクションはお任せします */
+
+.box1 {
+    margin-left: 0px;
+    transition: 1s ease-in-out ;
+}
+.box1:hover {
+    margin-left: 500px;
+    transition: 1s ease 0;
+}
+
+/* 問題２ ------------------------------------------------*/
+/* box2に、以下の内容のアニメーションを実行されるようにしてください */
+/* 3秒間掛けて回転する */
+/* 回転の軸はZ軸 */
+/* 常に回転し続ける */
+/* １周の間に四角の色を赤->黄->青->赤に変化 */
+/* タイミングファンクションはlinear */
+
+.box2 {
+    animation: turn 3s linear 0 infinite normal none running;
+}
+@keyframes turn {
+    0%{
+        background-color: red;
+        transform: rotate(90deg);
+    }
+    33%{
+        background-color: yellow;
+        transform: rotate(180deg);
+    }
+    66%{
+        background-color: blue;
+        transform: rotate(270deg);
+    }
+    100%{
+        background-color: red;
+        transform: rotate(360deg);
+    }
+}
